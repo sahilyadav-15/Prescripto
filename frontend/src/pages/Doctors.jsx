@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
+import { deptBtnData } from "../assets/assets";
 
 const Doctors = () => {
   const { dept_id } = useParams();
@@ -21,78 +22,22 @@ const Doctors = () => {
       <p className="text-gray-600">Browse through the doctors specialist.</p>
       <div className="flex flex-col sm:flex-row items-start gap-5 mt-5">
         <div className="flex flex-col gap-4 text-sm text-gray-600">
-          <p
-            onClick={() =>
-              dept_id === "0" ? navigate("/doctors") : navigate("/doctors/0")
-            }
-            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer  ${
-              dept_id === "0"
-                ? "bg-indigo-100 text-black"
-                : "hover:bg-indigo-50"
-            }`}
-          >
-            General physician
-          </p>
-          <p
-            onClick={() =>
-              dept_id === "1" ? navigate("/doctors") : navigate("/doctors/1")
-            }
-            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              dept_id === "1"
-                ? "bg-indigo-100 text-black"
-                : "hover:bg-indigo-50"
-            }`}
-          >
-            Gynecologist
-          </p>
-          <p
-            onClick={() =>
-              dept_id === "2" ? navigate("/doctors") : navigate("/doctors/2")
-            }
-            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer  ${
-              dept_id === "2"
-                ? "bg-indigo-100 text-black"
-                : "hover:bg-indigo-50"
-            }`}
-          >
-            Dermatologist
-          </p>
-          <p
-            onClick={() =>
-              dept_id === "3" ? navigate("/doctors") : navigate("/doctors/3")
-            }
-            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer  ${
-              dept_id === "3"
-                ? "bg-indigo-100 text-black"
-                : "hover:bg-indigo-50"
-            }`}
-          >
-            Pediatricians
-          </p>
-          <p
-            onClick={() =>
-              dept_id === "4" ? navigate("/doctors") : navigate("/doctors/4")
-            }
-            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer  ${
-              dept_id === "4"
-                ? "bg-indigo-100 text-black"
-                : "hover:bg-indigo-50"
-            }`}
-          >
-            Neurologist
-          </p>
-          <p
-            onClick={() =>
-              dept_id === "5" ? navigate("/doctors") : navigate("/doctors/5")
-            }
-            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer  ${
-              dept_id === "5"
-                ? "bg-indigo-100 text-black"
-                : "hover:bg-indigo-50"
-            }`}
-          >
-            Gastroenterologist
-          </p>
+          {deptBtnData.map((item) => (
+            <p
+              onClick={() =>
+                dept_id === "0"
+                  ? navigate("/doctors")
+                  : navigate(`/doctors/${item.id}`)
+              }
+              className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer  ${
+                dept_id === "0"
+                  ? "bg-indigo-100 text-black"
+                  : "hover:bg-indigo-50"
+              }`}
+            >
+              {item.name}
+            </p>
+          ))}
         </div>
         <div className="w-full grid grid-cols-auto gap-4 gap-y-6">
           {filetDoc.map((item, index) => (

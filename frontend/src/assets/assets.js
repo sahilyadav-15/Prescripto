@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import appointment_img from "./appointment_img.png";
 import header_img from "./header_img.png";
 import group_profiles from "./group_profiles.png";
@@ -331,4 +332,13 @@ export const doctors = [
       line2: "Circle, Ring Road, London",
     },
   },
+];
+
+export const deptBtnData = [
+  { id: 0, name: "General physician" },
+  { id: 1, name: "Gynecologist" },
+  { id: 2, name: "Dermatologist" },
+  { id: 3, name: "Pediatricians" },
+  { id: 4, name: "Neurologist" },
+  { id: 5, name: "Gastroenterologist" },
 ];
