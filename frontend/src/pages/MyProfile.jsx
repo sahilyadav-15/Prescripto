@@ -3,7 +3,7 @@ import { assets } from "../assets/assets";
 
 const MyProfile = () => {
   const [userData, setUserData] = useState({
-    name: "Sahil Yadav",
+    name: "Sanjay Yadav",
     image: assets.profile_pic,
     email: "sy9046388@gmail.com",
     phone: "7042088156",
@@ -12,7 +12,7 @@ const MyProfile = () => {
       line2: "Delta 1, Greater Noida",
     },
     gender: "Male",
-    dob: "2004-01-10",
+    dob: "1997-01-15",
   });
 
   const [isEdit, setIsEdit] = useState(false);
